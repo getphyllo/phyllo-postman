@@ -15,13 +15,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
+									"key": "password",
+									"value": "{{CLIENT_SECRET}}",
 									"type": "string"
 								},
 								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
+									"key": "username",
+									"value": "{{CLIENT_ID}}",
 									"type": "string"
 								},
 								{
@@ -41,7 +41,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"redirect_uri\":\"https://domainname/redirect_uri\",\n    \"products\": [\n        \"IDENTITY\",\n        \"ENGAGEMENT\",\n        \"INCOME\"\n    ]\n}",
+							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"products\": [\n        \"IDENTITY\",\n        \"ENGAGEMENT\",\n        \"INCOME\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -225,13 +225,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
+									"key": "password",
+									"value": "{{CLIENT_SECRET}}",
 									"type": "string"
 								},
 								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
+									"key": "username",
+									"value": "{{CLIENT_ID}}",
 									"type": "string"
 								},
 								{
@@ -308,7 +308,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Parikshit\",\n  \"external_id\": \"c8b24285-e576-4c7a-9196-26c0c401afe8\"\n}",
+							"raw": "{\n  \"name\": \"Arvind\",\n  \"external_id\": \"c8b24285-e576-4c7a-9196-26c0c401afe81\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -502,7 +502,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/profiles/{{PROFILE_ID}}?reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}",
+							"raw": "{{BASE_URL}}/v1/profiles/{{PROFILE_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -510,16 +510,6 @@
 								"v1",
 								"profiles",
 								"{{PROFILE_ID}}"
-							],
-							"query": [
-								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
-								},
-								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
-								}
 							]
 						}
 					},
@@ -551,7 +541,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/profiles?reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&user_id={{USER_ID}}&account_id={{ACCOUNT_ID}}&work_platform_id={{WORK_PLATFORM_ID}}",
+							"raw": "{{BASE_URL}}/v1/profiles?limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -561,14 +551,6 @@
 							],
 							"query": [
 								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
-								},
-								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
-								},
-								{
 									"key": "limit",
 									"value": "{{LIMIT}}"
 								},
@@ -577,16 +559,8 @@
 									"value": "{{OFFSET}}"
 								},
 								{
-									"key": "user_id",
-									"value": "{{USER_ID}}"
-								},
-								{
 									"key": "account_id",
 									"value": "{{ACCOUNT_ID}}"
-								},
-								{
-									"key": "work_platform_id",
-									"value": "{{WORK_PLATFORM_ID}}"
 								}
 							]
 						}
@@ -624,22 +598,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/content-groups?reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&user_id={{USER_ID}}&account_id={{ACCOUNT_ID}}&work_platform_id={{WORK_PLATFORM_ID}}",
+							"raw": "{{BASE_URL}}/v1/social/content-groups?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
+								"social",
 								"content-groups"
 							],
 							"query": [
 								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
+									"key": "from_date",
+									"value": "{{FROM_DATE}}"
 								},
 								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
+									"key": "to_date",
+									"value": "{{TO_DATE}}"
 								},
 								{
 									"key": "limit",
@@ -648,78 +623,10 @@
 								{
 									"key": "offset",
 									"value": "{{OFFSET}}"
-								},
-								{
-									"key": "user_id",
-									"value": "{{USER_ID}}"
 								},
 								{
 									"key": "account_id",
 									"value": "{{ACCOUNT_ID}}"
-								},
-								{
-									"key": "work_platform_id",
-									"value": "{{WORK_PLATFORM_ID}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Content-Groups For Specific User",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/v1/content-groups?user_id={{USER_ID}}&reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"content-groups"
-							],
-							"query": [
-								{
-									"key": "user_id",
-									"value": "{{USER_ID}}"
-								},
-								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
-								},
-								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
-								},
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
 								}
 							]
 						}
@@ -752,24 +659,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/contents/{{CONTENT_ID}}?reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}",
+							"raw": "{{BASE_URL}}/v1/social/contents/{{CONTENT_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
+								"social",
 								"contents",
 								"{{CONTENT_ID}}"
-							],
-							"query": [
-								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
-								},
-								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
-								}
 							]
 						}
 					},
@@ -801,22 +699,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/contents?reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&user_id={{USER_ID}}&account_id={{ACCOUNT_ID}}&work_platform_id={{WORK_PLATFORM_ID}}",
+							"raw": "{{BASE_URL}}/v1/social/contents?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
+								"social",
 								"contents"
 							],
 							"query": [
 								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
+									"key": "from_date",
+									"value": "{{FROM_DATE}}"
 								},
 								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
+									"key": "to_date",
+									"value": "{{TO_DATE}}"
 								},
 								{
 									"key": "limit",
@@ -825,78 +724,10 @@
 								{
 									"key": "offset",
 									"value": "{{OFFSET}}"
-								},
-								{
-									"key": "user_id",
-									"value": "{{USER_ID}}"
 								},
 								{
 									"key": "account_id",
 									"value": "{{ACCOUNT_ID}}"
-								},
-								{
-									"key": "work_platform_id",
-									"value": "{{WORK_PLATFORM_ID}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Contents For Specific User",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/v1/contents?user_id={{USER_ID}}&reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"contents"
-							],
-							"query": [
-								{
-									"key": "user_id",
-									"value": "{{USER_ID}}"
-								},
-								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
-								},
-								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
-								},
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
 								}
 							]
 						}
@@ -929,24 +760,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/content-groups/{{CONTENT_GROUP_ID}}?reputation_from_date={{REPUTATION_FROM_DATE}}&reputation_to_date={{REPUTATION_TO_DATE}}",
+							"raw": "{{BASE_URL}}/v1/social/content-groups/{{CONTENT_GROUP_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
+								"social",
 								"content-groups",
 								"{{CONTENT_GROUP_ID}}"
-							],
-							"query": [
-								{
-									"key": "reputation_from_date",
-									"value": "{{REPUTATION_FROM_DATE}}"
-								},
-								{
-									"key": "reputation_to_date",
-									"value": "{{REPUTATION_TO_DATE}}"
-								}
 							]
 						}
 					},
@@ -1293,7 +1115,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"event\": \"ACCOUNTS.CONNECTED\"\n}",
+							"raw": "{\n    \"payload\": {\n        \"event\": \"PROFILES.ADDED\",\n        \"name\": \"A new account has been connected\",\n        \"data\": {\n            \"account_id\": \"e5ce92b9-70e2-4e38-bff1-7409341b07c9\",\n            \"user_id\": \"1b858313-e011-412b-87a3-0480543f61a9\"\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
