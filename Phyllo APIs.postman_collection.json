@@ -1189,6 +1189,47 @@
 					"response": []
 				},
 				{
+					"name": "Delete a webhook",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{CLIENT_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{CLIENT_ID}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/webhooks/{{WEBHOOK_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"webhooks",
+								"{{WEBHOOK_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Webhook By Id",
 					"request": {
 						"auth": {
