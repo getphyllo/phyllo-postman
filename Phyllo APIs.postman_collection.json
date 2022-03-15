@@ -627,6 +627,10 @@
 								{
 									"key": "account_id",
 									"value": "{{ACCOUNT_ID}}"
+								},
+								{
+									"key": "filters",
+									"value": "{{FILTER_QUERY}}"
 								}
 							]
 						}
@@ -728,6 +732,10 @@
 								{
 									"key": "account_id",
 									"value": "{{ACCOUNT_ID}}"
+								},
+								{
+									"key": "filters",
+									"value": "{{FILTER_QUERY}}"
 								}
 							]
 						}
