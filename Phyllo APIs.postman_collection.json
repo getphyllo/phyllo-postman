@@ -470,6 +470,55 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Disconnect an Account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{CLIENT_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{CLIENT_ID}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/accounts/{{ACCOUNT_ID}}/disconnect",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"accounts",
+								"{{ACCOUNT_ID}}",
+								"disconnect"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -598,7 +647,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/social/content-groups?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}",
+							"raw": "{{BASE_URL}}/v1/social/content-groups?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}&filters={{FILTER_QUERY}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -703,7 +752,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/social/contents?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}",
+							"raw": "{{BASE_URL}}/v1/social/contents?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}&filters={{FILTER_QUERY}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -1099,7 +1148,6 @@
 								"type": "text"
 							}
 						],
-						"body": {},
 						"url": {
 							"raw": "{{BASE_URL}}/v1/webhooks/{{WEBHOOK_ID}}",
 							"host": [
