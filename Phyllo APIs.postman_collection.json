@@ -830,6 +830,76 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Comments",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{CLIENT_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{CLIENT_ID}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/comments?account_id={{ACCOUNT_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "account_id",
+									"value": "{{ACCOUNT_ID}}"
+								},
+								{
+									"key": "from_date",
+									"value": "{{FROM_DATE}}",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "{{TO_DATE}}",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								},
+								{
+									"key": "filters",
+									"value": "{{FILTER_QUERY}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
