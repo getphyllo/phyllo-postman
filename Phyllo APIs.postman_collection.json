@@ -11,26 +11,6 @@
 				{
 					"name": "Create User Token",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -67,26 +47,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -118,26 +78,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -170,26 +110,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -221,26 +141,6 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -278,26 +178,6 @@
 				{
 					"name": "Create User",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -331,26 +211,6 @@
 				{
 					"name": "Get All Work-Platforms",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -379,26 +239,6 @@
 				{
 					"name": "Get All Accounts",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -435,26 +275,6 @@
 				{
 					"name": "Get Accounts By Id",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -474,26 +294,6 @@
 				{
 					"name": "Disconnect an Account",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -528,26 +328,6 @@
 				{
 					"name": "Get Profiles By Id",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -567,26 +347,6 @@
 				{
 					"name": "Get All Profiles",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -624,26 +384,6 @@
 				{
 					"name": "Get All Content-Groups",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -689,26 +429,6 @@
 				{
 					"name": "Get Contents By Id",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -729,26 +449,6 @@
 				{
 					"name": "Get All Contents",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -794,26 +494,6 @@
 				{
 					"name": "Get Content-Groups By Id",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -834,26 +514,6 @@
 				{
 					"name": "Get All Comments",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -909,26 +569,6 @@
 				{
 					"name": "Get All Accounts Incomes",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -966,26 +606,6 @@
 				{
 					"name": "Get Specific Account Income",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "showPassword",
-									"value": false,
-									"type": "boolean"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1021,21 +641,6 @@
 				{
 					"name": "Get All Webhooks",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1054,21 +659,6 @@
 				{
 					"name": "Create a Webhook",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -1102,21 +692,6 @@
 				{
 					"name": "Send a Webhook",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [
 							{
@@ -1151,21 +726,6 @@
 				{
 					"name": "Update a Webhook",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
 						"header": [
 							{
@@ -1195,21 +755,6 @@
 				{
 					"name": "Delete a webhook",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -1235,21 +780,6 @@
 				{
 					"name": "Get Webhook By Id",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "{{CLIENT_ID}}",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "{{CLIENT_SECRET}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1267,6 +797,41 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{CLIENT_SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{CLIENT_ID}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
