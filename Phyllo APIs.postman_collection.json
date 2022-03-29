@@ -9,19 +9,16 @@
 			"name": "Connect",
 			"item": [
 				{
-					"name": "Create User Token",
+					"name": "Retrieve a work platform",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"method": "GET",
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"products\": [\n        \"IDENTITY\",\n        \"ENGAGEMENT\",\n        \"INCOME\"\n    ]\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -29,20 +26,56 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/v1/sdk-tokens",
+							"raw": "{{BASE_URL}}/v1/work-platforms/{{WORK_PLATFORM_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
-								"sdk-tokens"
+								"work-platforms",
+								"{{WORK_PLATFORM_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get User By Id",
+					"name": "Retrieve all work platforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/work-platforms",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"work-platforms"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "{{WORK_PLATFORM_NAME}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve a user",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -73,7 +106,76 @@
 					"response": []
 				},
 				{
-					"name": "Get User By External Id",
+					"name": "Retrieve all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Arvind\",\n  \"external_id\": \"c8b24285-e576-4c7a-9196-26c0c401afe84\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve a user by external ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -105,90 +207,13 @@
 					"response": []
 				},
 				{
-					"name": "Get Work-Platforms By Id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/v1/work-platforms/{{WORK_PLATFORM_ID}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"work-platforms",
-								"{{WORK_PLATFORM_ID}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Users",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/v1/users?limit={{LIMIT}}&offset={{OFFSET}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"users"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create User",
+					"name": "Create an SDK token",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Arvind\",\n  \"external_id\": \"c8b24285-e576-4c7a-9196-26c0c401afe81\"\n}",
+							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"products\": [\n        \"IDENTITY\",\n        \"ENGAGEMENT\",\n        \"ENGAGEMENT.AUDIENCE\",\n        \"INCOME\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -196,84 +221,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/v1/users",
+							"raw": "{{BASE_URL}}/v1/sdk-tokens",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
-								"users"
+								"sdk-tokens"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get All Work-Platforms",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/v1/work-platforms?limit={{LIMIT}}&offset={{OFFSET}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"work-platforms"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Accounts",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/v1/accounts?limit={{LIMIT}}&offset={{OFFSET}}&user_id={{USER_ID}}&work_platform_id={{WORK_PLATFORM_ID}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"accounts"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
-								},
-								{
-									"key": "user_id",
-									"value": "{{USER_ID}}"
-								},
-								{
-									"key": "work_platform_id",
-									"value": "{{WORK_PLATFORM_ID}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Accounts By Id",
+					"name": "Retrieve an account",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -292,7 +253,47 @@
 					"response": []
 				},
 				{
-					"name": "Disconnect an Account",
+					"name": "Retrieve all accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/accounts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "{{USER_ID}}",
+									"disabled": true
+								},
+								{
+									"key": "work_platform_id",
+									"value": "{{WORK_PLATFORM_ID}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disconnect an account",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -326,7 +327,7 @@
 			"name": "Identity",
 			"item": [
 				{
-					"name": "Get Profiles By Id",
+					"name": "Retrieve a profile",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -345,12 +346,12 @@
 					"response": []
 				},
 				{
-					"name": "Get All Profiles",
+					"name": "Retrieve all profiles",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/profiles?limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}",
+							"raw": "{{BASE_URL}}/v1/profiles",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -361,15 +362,28 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "{{LIMIT}}"
+									"value": "{{LIMIT}}",
+									"disabled": true
 								},
 								{
 									"key": "offset",
-									"value": "{{OFFSET}}"
+									"value": "{{OFFSET}}",
+									"disabled": true
 								},
 								{
 									"key": "account_id",
-									"value": "{{ACCOUNT_ID}}"
+									"value": "{{ACCOUNT_ID}}",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "{{USER_ID}}",
+									"disabled": true
+								},
+								{
+									"key": "work_platform_id",
+									"value": "{{WORK_PLATFORM_ID}}",
+									"disabled": true
 								}
 							]
 						}
@@ -382,52 +396,7 @@
 			"name": "Engagement",
 			"item": [
 				{
-					"name": "Get All Content-Groups",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/v1/social/content-groups?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}&filters={{FILTER_QUERY}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"social",
-								"content-groups"
-							],
-							"query": [
-								{
-									"key": "from_date",
-									"value": "{{FROM_DATE}}"
-								},
-								{
-									"key": "to_date",
-									"value": "{{TO_DATE}}"
-								},
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
-								},
-								{
-									"key": "account_id",
-									"value": "{{ACCOUNT_ID}}"
-								},
-								{
-									"key": "filters",
-									"value": "{{FILTER_QUERY}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Contents By Id",
+					"name": "Retrieve a content item",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -447,12 +416,12 @@
 					"response": []
 				},
 				{
-					"name": "Get All Contents",
+					"name": "Retrieve all content items",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/social/contents?from_date={{FROM_DATE}}&to_date={{TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}&account_id={{ACCOUNT_ID}}&filters={{FILTER_QUERY}}",
+							"raw": "{{BASE_URL}}/v1/social/contents",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -464,27 +433,33 @@
 							"query": [
 								{
 									"key": "from_date",
-									"value": "{{FROM_DATE}}"
+									"value": "{{FROM_DATE}}",
+									"disabled": true
 								},
 								{
 									"key": "to_date",
-									"value": "{{TO_DATE}}"
+									"value": "{{TO_DATE}}",
+									"disabled": true
 								},
 								{
 									"key": "limit",
-									"value": "{{LIMIT}}"
+									"value": "{{LIMIT}}",
+									"disabled": true
 								},
 								{
 									"key": "offset",
-									"value": "{{OFFSET}}"
+									"value": "{{OFFSET}}",
+									"disabled": true
 								},
 								{
 									"key": "account_id",
-									"value": "{{ACCOUNT_ID}}"
+									"value": "{{ACCOUNT_ID}}",
+									"disabled": true
 								},
 								{
 									"key": "filters",
-									"value": "{{FILTER_QUERY}}"
+									"value": "{{FILTER_QUERY}}",
+									"disabled": true
 								}
 							]
 						}
@@ -492,7 +467,36 @@
 					"response": []
 				},
 				{
-					"name": "Get Content-Groups By Id",
+					"name": "Refresh content items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\": \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/content-groups/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"content-groups",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve a content group",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -512,7 +516,87 @@
 					"response": []
 				},
 				{
-					"name": "Get All Comments",
+					"name": "Retrieve all content groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/content-groups",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"content-groups"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "{{FROM_DATE}}",
+									"disabled": true
+								},
+								{
+									"key": "to_date",
+									"value": "{{TO_DATE}}",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								},
+								{
+									"key": "account_id",
+									"value": "{{ACCOUNT_ID}}",
+									"disabled": true
+								},
+								{
+									"key": "filters",
+									"value": "{{FILTER_QUERY}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh content groups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\": \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/content-groups/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"content-groups",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve all comments",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -567,49 +651,12 @@
 			"name": "Income",
 			"item": [
 				{
-					"name": "Get All Accounts Incomes",
+					"name": "Retrieve income for an account",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/income/accounts?income_from_date={{INCOME_FROM_DATE}}&income_to_date={{INCOME_TO_DATE}}&limit={{LIMIT}}&offset={{OFFSET}}",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"income",
-								"accounts"
-							],
-							"query": [
-								{
-									"key": "income_from_date",
-									"value": "{{INCOME_FROM_DATE}}"
-								},
-								{
-									"key": "income_to_date",
-									"value": "{{INCOME_TO_DATE}}"
-								},
-								{
-									"key": "limit",
-									"value": "{{LIMIT}}"
-								},
-								{
-									"key": "offset",
-									"value": "{{OFFSET}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Specific Account Income",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/v1/income/accounts/{{ACCOUNT_ID}}?income_from_date={{INCOME_FROM_DATE}}&income_to_date={{INCOME_TO_DATE}}",
+							"raw": "{{BASE_URL}}/v1/income/accounts/{{ACCOUNT_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -622,11 +669,54 @@
 							"query": [
 								{
 									"key": "income_from_date",
-									"value": "{{INCOME_FROM_DATE}}"
+									"value": "{{INCOME_FROM_DATE}}",
+									"disabled": true
 								},
 								{
 									"key": "income_to_date",
-									"value": "{{INCOME_TO_DATE}}"
+									"value": "{{INCOME_TO_DATE}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve income for all accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/income/accounts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"income",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "income_from_date",
+									"value": "{{INCOME_FROM_DATE}}",
+									"disabled": true
+								},
+								{
+									"key": "income_to_date",
+									"value": "{{INCOME_TO_DATE}}",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
 								}
 							]
 						}
@@ -639,104 +729,37 @@
 			"name": "Webhook",
 			"item": [
 				{
-					"name": "Get All Webhooks",
+					"name": "Retrieve a webhook",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/webhooks",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"webhooks"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a Webhook",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"url\": \"http://0.0.0.0:8000/webhook\",\n  \"events\": [\n    \"PROFILES.ADDED\"\n  ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/v1/webhooks",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"v1",
-								"webhooks"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Send a Webhook",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"payload\": {\n        \"event\": \"PROFILES.ADDED\",\n        \"name\": \"A new account has been connected\",\n        \"data\": {\n            \"account_id\": \"e5ce92b9-70e2-4e38-bff1-7409341b07c9\",\n            \"user_id\": \"1b858313-e011-412b-87a3-0480543f61a9\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/v1/webhooks/send",
+							"raw": "{{BASE_URL}}/v1/webhooks/{{WEBHOOK_ID}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
 								"webhooks",
-								"send"
+								"{{WEBHOOK_ID}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update a Webhook",
+					"name": "Update a webhook",
 					"request": {
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"url\": \"http://0.0.0.0:9000\",\n  \"is_active\": true,\n  \"events\": [\n    \"ACCOUNTS.CONNECTED\"\n  ]\n}"
+							"raw": "{\n    \"url\": \"http://0.0.0.0:8000/webhook\",\n    \"events\": [\n        \"PROFILES.ADDED\",\n        \"PROFILES.UPDATED\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{BASE_URL}}/v1/webhooks/{{WEBHOOK_ID}}",
@@ -756,13 +779,16 @@
 					"name": "Delete a webhook",
 					"request": {
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
 							}
-						],
+						},
 						"url": {
 							"raw": "{{BASE_URL}}/v1/webhooks/{{WEBHOOK_ID}}",
 							"host": [
@@ -778,19 +804,85 @@
 					"response": []
 				},
 				{
-					"name": "Get Webhook By Id",
+					"name": "Retrieve all webhooks",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/webhooks/{{WEBHOOK_ID}}",
+							"raw": "{{BASE_URL}}/v1/webhooks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"webhooks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://0.0.0.0:8000/webhook\",\n    \"events\": [\n        \"PROFILES.ADDED\",\n        \"PROFILES.UPDATED\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/webhooks",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"webhooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send a mock webhook notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payload\": {\n        \"event\": \"PROFILES.ADDED\",\n        \"name\": \"profile added\",\n        \"data\": {\n            \"account_id\": \"4544993eac6f4c4a9ec27e23f6cb8c56\",\n            \"user_id\": \"6bd84fa308f84e66abf108fd3d29f9ef\",\n            \"profile_id\": \"74e5f67b9df04cbeba0894d749561447\",\n            \"last_updated_time\": \"2021-11-10 12:59:51.874364\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/webhooks/send",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
 								"webhooks",
-								"{{WEBHOOK_ID}}"
+								"send"
 							]
 						}
 					},
