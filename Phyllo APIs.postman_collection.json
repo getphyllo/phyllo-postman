@@ -253,6 +253,34 @@
 					"response": []
 				},
 				{
+					"name": "Update an account",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"identity\": {\n            \"monitoring_type\": \"STANDARD\",\n            \"audience\": {\n                \"monitoring_type\": \"STANDARD\"\n            }\n        },\n        \"engagement\": {\n            \"monitoring_type\": \"STANDARD\",\n            \"audience\": {\n                \"monitoring_type\": \"STANDARD\"\n            }\n        },\n        \"income\": {\n            \"monitoring_type\": \"STANDARD\"}\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/accounts/{{ACCOUNT_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"accounts",
+								"{{ACCOUNT_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve all accounts",
 					"request": {
 						"method": "GET",
