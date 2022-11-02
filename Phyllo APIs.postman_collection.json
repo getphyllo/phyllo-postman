@@ -743,7 +743,7 @@
 							"query": [
 								{
 									"key": "type",
-									"value": null,
+									"value": "",
 									"disabled": true
 								},
 								{
@@ -804,6 +804,106 @@
 					"response": []
 				},
 				{
+					"name": "Retrieve a social payout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/payouts/{{SOCIAL_PAYOUT_ID}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"payouts",
+								"{{SOCIAL_PAYOUT_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve social payouts for an account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/payouts?account_id={{ACCOUNT_ID}}&payout_from_date={{PAYOUT_FROM_DATE}}&payout_to_date={{PAYOUT_TO_DATE}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"payouts"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "account_id",
+									"value": "{{ACCOUNT_ID}}"
+								},
+								{
+									"key": "payout_from_date",
+									"value": "{{PAYOUT_FROM_DATE}}"
+								},
+								{
+									"key": "payout_to_date",
+									"value": "{{PAYOUT_TO_DATE}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{LIMIT}}",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "{{OFFSET}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve social payouts in bulk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        {{ECOMMERCE_TRANSACTION_ID}}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/payouts/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"payouts",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve a e-commerce transaction",
 					"request": {
 						"method": "GET",
@@ -843,7 +943,7 @@
 							"query": [
 								{
 									"key": "type",
-									"value": null,
+									"value": "",
 									"disabled": true
 								},
 								{
@@ -1025,7 +1125,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/v1/commerce/income/balances?account_id={{ACCOUNT_ID}}&transaction_from_date={{BALANCE_FROM_DATE}}&transaction_to_date={{BALANCE_TO_DATE}}",
+							"raw": "{{BASE_URL}}/v1/commerce/income/balances?account_id={{ACCOUNT_ID}}&balance_from_date={{BALANCE_FROM_DATE}}&balance_to_date={{BALANCE_TO_DATE}}",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -1041,11 +1141,11 @@
 									"value": "{{ACCOUNT_ID}}"
 								},
 								{
-									"key": "transaction_from_date",
+									"key": "balance_from_date",
 									"value": "{{BALANCE_FROM_DATE}}"
 								},
 								{
-									"key": "transaction_to_date",
+									"key": "balance_to_date",
 									"value": "{{BALANCE_TO_DATE}}"
 								},
 								{
