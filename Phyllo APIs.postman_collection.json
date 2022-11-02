@@ -419,6 +419,34 @@
 					"response": []
 				},
 				{
+					"name": "Refresh a profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/profile/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"profile",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve audience demographics",
 					"request": {
 						"method": "GET",
@@ -526,6 +554,35 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/contents/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"contents",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic content items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
 							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\": \"2020-04-01\"\n}",
 							"options": {
 								"raw": {
@@ -534,15 +591,44 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/v1/social/content-groups/refresh",
+							"raw": "{{BASE_URL}}/v1/social/contents/fetch-historic",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
 								"social",
-								"content-groups",
-								"refresh"
+								"contents",
+								"fetch-historic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve content items in bulk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        {{CONTENT_ID}}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/contents/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"contents",
+								"search"
 							]
 						}
 					},
@@ -626,7 +712,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\": \"2020-04-01\"\n}",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -643,6 +729,64 @@
 								"social",
 								"content-groups",
 								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic content groups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\": \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/content-groups/fetch-historic",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"content-groups",
+								"fetch-historic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve content groups in bulk",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\n        {{CONTENT_GROUP_ID}}\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/content-groups/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"content-groups",
+								"search"
 							]
 						}
 					},
@@ -774,6 +918,66 @@
 					"response": []
 				},
 				{
+					"name": "Refresh social transactions for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/transactions/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"transactions",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic social transactions for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\":  \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/transactions/fetch-historic",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"transactions",
+								"fetch-historic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve social transactions in bulk",
 					"request": {
 						"method": "POST",
@@ -874,13 +1078,73 @@
 					"response": []
 				},
 				{
+					"name": "Refresh social payouts for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/payouts/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"payouts",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic social payouts for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\":  \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/social/income/payouts/fetch-historic",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"social",
+								"income",
+								"payouts",
+								"fetch-historic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve social payouts in bulk",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"ids\": [\n        {{ECOMMERCE_TRANSACTION_ID}}\n    ]\n}",
+							"raw": "{\n    \"ids\": [\n        {{SOCIAL_PAYOUT_ID}}\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -968,6 +1232,66 @@
 									"value": "{{OFFSET}}",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh e-commerce transactions for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/commerce/income/transactions/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"commerce",
+								"income",
+								"transactions",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic e-commerce transactions for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\":  \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/commerce/income/transactions/fetch-historic",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"commerce",
+								"income",
+								"transactions",
+								"fetch-historic"
 							]
 						}
 					},
@@ -1069,6 +1393,66 @@
 					"response": []
 				},
 				{
+					"name": "Refresh e-commerce payouts for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/commerce/income/payouts/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"commerce",
+								"income",
+								"payouts",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic e-commerce payouts for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\":  \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/commerce/income/payouts/fetch-historic",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"commerce",
+								"income",
+								"payouts",
+								"fetch-historic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve e-commerce payouts in bulk",
 					"request": {
 						"method": "POST",
@@ -1158,6 +1542,66 @@
 									"value": "{{OFFSET}}",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh e-commerce balances for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/commerce/income/balances/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"commerce",
+								"income",
+								"balances",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch historic e-commerce balances for an account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": \"{{ACCOUNT_ID}}\",\n    \"from_date\":  \"2020-04-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1/commerce/income/balances/fetch-historic",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1",
+								"commerce",
+								"income",
+								"balances",
+								"fetch-historic"
 							]
 						}
 					},
