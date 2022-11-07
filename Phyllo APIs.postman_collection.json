@@ -433,13 +433,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/v1/profile/refresh",
+							"raw": "{{BASE_URL}}/v1/profiles/refresh",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"v1",
-								"profile",
+								"profiles",
 								"refresh"
 							]
 						}
